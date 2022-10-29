@@ -1,5 +1,6 @@
 local groups = {}
 
+local italic_setting_teng
 ---Get default highlight groups
 ---@param colors table<string, string> #table of colors
 ---@param transparent boolean #whether background is transparent or not
@@ -38,8 +39,8 @@ function groups.get(colors, transparent)
         SpecialComment = { fg = colors.cyan },
         Tag = { fg = colors.pink },
 
-        Comment = { fg = colors.gray, italic = true },
-        Todo = { fg = colors.orange, bold = true, italic = true },
+        Comment = { fg = colors.gray, italic = italic_setting_teng },
+        Todo = { fg = colors.orange, bold = true, italic = italic_setting_teng },
 
         Error = { fg = colors.red },
         Ignore = { fg = colors.yellow },
@@ -106,7 +107,7 @@ function groups.get(colors, transparent)
         ["@none"] = {},
         ["@number"] = { link = "Number" },
         ["@operator"] = { link = "Operator" },
-        ["@parameter"] = { fg = colors.orange, italic = true },
+        ["@parameter"] = { fg = colors.orange, italic = italic_setting_teng },
         ["@parameter.reference"] = { link = "@parameter" },
         ["@preproc"] = { link = "PreProc" },
         ["@property"] = { link = "Identifier" },
@@ -125,7 +126,7 @@ function groups.get(colors, transparent)
         ["@tag.delimiter"] = { link = "Delimiter" },
         ["@text"] = { link = "Normal" },
         ["@text.danger"] = { link = "WarningMsg" },
-        ["@text.emphasis"] = { italic = true },
+        ["@text.emphasis"] = { italic = italic_setting_teng },
         ["@text.environment"] = { link = "Macro" },
         ["@text.environment.name"] = { link = "Type" },
         ["@text.literal"] = { link = "String" },
@@ -269,22 +270,22 @@ function groups.get(colors, transparent)
 
         -- bufferline
         BufferLineDiagnostic = { fg = colors.dark_gray },
-        BufferLineDiagnosticSelected = { fg = colors.light_gray, bold = true, italic = true },
+        BufferLineDiagnosticSelected = { fg = colors.light_gray, bold = true, italic = italic_setting_teng },
         BufferLineDiagnosticVisible = { fg = colors.dark_gray },
         BufferLineErrorDiagnostic = { fg = colors.dark_gray, sp = colors.red },
-        BufferLineErrorDiagnosticSelected = { fg = colors.red, sp = colors.red, bold = true, italic = true },
+        BufferLineErrorDiagnosticSelected = { fg = colors.red, sp = colors.red, bold = true, italic = italic_setting_teng },
         BufferLineErrorDiagnosticVisible = { fg = colors.red },
         BufferLineHintDiagnostic = { fg = colors.dark_gray, sp = colors.light_gray },
         BufferLineHintDiagnosticSelected = {
             fg = colors.light_gray,
             sp = colors.light_gray,
             bold = true,
-            italic = true,
+            italic = italic_setting_teng,
         },
         BufferLineHintDiagnosticVisible = { fg = colors.light_gray },
         BufferLineIndicatorSelected = { fg = colors.aqua },
         BufferLineInfoDiagnostic = { fg = colors.dark_gray, sp = colors.green },
-        BufferLineInfoDiagnosticSelected = { fg = colors.green, sp = colors.green, bold = true, italic = true },
+        BufferLineInfoDiagnosticSelected = { fg = colors.green, sp = colors.green, bold = true, italic = italic_setting_teng },
         BufferLineInfoDiagnosticVisible = { fg = colors.green },
         BufferLineModified = { fg = colors.pink },
         BufferLineModifiedSelected = { fg = colors.pink },
@@ -293,7 +294,7 @@ function groups.get(colors, transparent)
         BufferLineNumbersSelected = { fg = colors.purple },
         BufferLineNumbersVisible = { fg = colors.purple },
         BufferLineWarningDiagnostic = { fg = colors.dark_gray, sp = colors.yellow },
-        BufferLineWarningDiagnosticSelected = { fg = colors.yellow, sp = colors.yellow, bold = true, italic = true },
+        BufferLineWarningDiagnosticSelected = { fg = colors.yellow, sp = colors.yellow, bold = true, italic = italic_setting_teng },
         BufferLineWarningDiagnosticVisible = { fg = colors.yellow },
 
         -- whichkey
@@ -429,10 +430,10 @@ function groups.get(colors, transparent)
         -- javascript
         jsArgsObj = { fg = colors.cyan },
         jsBuiltins = { fg = colors.cyan },
-        jsDocTags = { fg = colors.cyan, italic = true },
+        jsDocTags = { fg = colors.cyan, italic = italic_setting_teng },
         jsExceptions = { fg = colors.cyan },
-        jsFuncArgRest = { fg = colors.purple, italic = true },
-        jsFuncArgs = { fg = colors.orange, italic = true },
+        jsFuncArgRest = { fg = colors.purple, italic = italic_setting_teng },
+        jsFuncArgs = { fg = colors.orange, italic = italic_setting_teng },
         jsFuncName = { fg = colors.green },
         jsFunctionKey = { fg = colors.green },
         jsFutureKeys = { fg = colors.cyan },
@@ -446,16 +447,16 @@ function groups.get(colors, transparent)
         typescriptAmbientDeclaration = { fg = colors.pink },
         typescriptArrayMethod = { fg = colors.green },
         typescriptArrayStaticMethod = { fg = colors.green },
-        typescriptArrowFuncArg = { fg = colors.orange, italic = true },
+        typescriptArrowFuncArg = { fg = colors.orange, italic = italic_setting_teng },
         typescriptAsyncFuncKeyword = { fg = colors.pink },
         typescriptBinaryOp = { fg = colors.pink },
-        typescriptCall = { fg = colors.orange, italic = true },
+        typescriptCall = { fg = colors.orange, italic = italic_setting_teng },
         typescriptCastKeyword = { fg = colors.pink },
         typescriptDOMEventProp = { fg = colors.aqua },
         typescriptDestructureVariable = { fg = colors.aqua },
         typescriptEndColons = { fg = colors.fg },
         typescriptExport = { fg = colors.pink },
-        typescriptFuncType = { fg = colors.orange, italic = true },
+        typescriptFuncType = { fg = colors.orange, italic = italic_setting_teng },
         typescriptFuncTypeArrow = { fg = colors.cyan },
         typescriptGlobal = { fg = colors.aqua },
         typescriptGlobalMethod = { fg = colors.green },
@@ -482,7 +483,7 @@ function groups.get(colors, transparent)
         rustLet = { fg = colors.cyan },
         rustLifetime = { fg = colors.pink },
         rustModPath = { fg = colors.aqua },
-        rustParamName = { fg = colors.orange, italic = true },
+        rustParamName = { fg = colors.orange, italic = italic_setting_teng },
         rustSelf = { fg = colors.pink },
         rustSigil = { fg = colors.pink },
         rustType = { fg = colors.aqua },
@@ -510,7 +511,7 @@ function groups.get(colors, transparent)
         cssProp = { fg = colors.yellow },
         cssPseudoClassId = { fg = colors.purple },
         cssUIAttr = { fg = colors.yellow },
-        cssURL = { fg = colors.orange, underline = true, italic = true },
+        cssURL = { fg = colors.orange, underline = true, italic = italic_setting_teng },
         cssValueLength = { fg = colors.purple },
     }
 end
